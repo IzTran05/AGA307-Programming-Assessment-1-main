@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
     public float projectileSpeed = 1000f;
     public Transform firingPoint;
 
-    void Update()
+    /*void //Update()
     {
         if(Input.GetButtonDown("Fire1"))
         {
@@ -19,4 +19,20 @@ public class Projectile : MonoBehaviour
 
 
     }
+  */
+   private void OnCollisionEnter(Collision collision)
+    {
+        //check to see if the collided objexct has the tag "Target"
+        if (collision.collider.CompareTag("Target"))
+        {
+            //change the collided objects material colour to red
+            collision.collider.GetComponent<Renderer>().material.color = Color.red;
+            //destroy the collided object after one second
+            Destroy(collision.collider.gameObject, 1f);
+            //Dstroy this gameObject
+            Destroy(this.gameObject);
+        }
+
+    }
+  
 }

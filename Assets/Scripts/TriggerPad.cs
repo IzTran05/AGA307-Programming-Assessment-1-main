@@ -31,7 +31,7 @@ public class TriggerPad : MonoBehaviour
             //set the spheres size back to 1
             sphere.transform.localScale = Vector3.one;
             //Change the spheres colour to yellow
-            sphere.GetComponent<Renderer>().material.color = Color.blue;
+            sphere.GetComponent<Renderer>().material.color = Color.red;
         }
     }
 }

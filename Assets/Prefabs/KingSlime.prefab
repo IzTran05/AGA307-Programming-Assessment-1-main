@@ -231,9 +231,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6899340541178953313}
   - component: {fileID: 6970796786348225063}
+  - component: {fileID: -5054636706956020918}
   m_Layer: 0
   m_Name: KingSlime
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,6 +268,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576fcce20f7e2a9488b633d6722f3d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySize: 0
+  myScore: 0
+--- !u!65 &-5054636706956020918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988621864283236780}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8687030530478615421
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,28 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : Singleton<UIManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    /*
+    public TMP_Text scoreText;
+    public TMP_Text enemyCount;
+
+    private void Start()
     {
-        
+        UpdateScore();
+        UpdateEnemyCount();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateScore()
     {
-        
+        scoreText.text = "Score: " + _GM.Score;
     }
+
+    public void UpdateEnemyCount()
+    {
+        enemyCount.text = "Enemies Left :" + _EM.EnemyCount;
+    }
+
+    */
 }

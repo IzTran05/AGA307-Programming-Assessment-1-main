@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : GameBehaviour
 {
     [SerializeField]
     private EnemySize enemySize;
-    float moveDistance = 500000;
+    float moveDistance = 5000;
 
 
     [Header("Stats")]
@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     private int myHealth;
 
     [Header("Score")]
-    private int myScore;
+    public int myScore;
 
     public void Initialize(Transform _startPos, string _name)
     {
@@ -52,6 +52,12 @@ public class Enemy : MonoBehaviour
         transform.Rotate(Vector3.up * 180);
         yield return new WaitForSeconds(3);
         StartCoroutine(Move());
+    }
+
+    public void Death()
+    {
+        _EM.RemoveEnemy(this.gameObject);
+        
     }
 
 }

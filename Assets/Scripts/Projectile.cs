@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -20,19 +21,33 @@ public class Projectile : MonoBehaviour
 
     }
   */
-   private void OnCollisionEnter(Collision collision)
+
+    private void Start()
+    {
+        StartCoroutine(SpellTimer());
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         //check to see if the collided objexct has the tag "Target"
         if (collision.collider.CompareTag("Target"))
         {
             //change the collided objects material colour to red
-            collision.collider.GetComponent<Renderer>().material.color = Color.red;
+            //collision.collider.GetComponent<Renderer>().material.color = Color.red;
+            collision.gameObject.GetComponent<Enemy>().StopAllCoroutines();
+            collision.gameObject.GetComponent<Enemy>().Death();
             //destroy the collided object after one second
-            Destroy(collision.collider.gameObject, 1f);
+            //Destroy(collision.collider.gameObject, 1f);
             //Dstroy this gameObject
             Destroy(this.gameObject);
         }
 
     }
-  
+
+    private IEnumerator SpellTimer()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
+    }
+
 }

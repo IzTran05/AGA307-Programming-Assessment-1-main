@@ -13,8 +13,10 @@ public class EnemyManager : Singleton<EnemyManager>
     public Transform[] spawnPoints;
     public GameObject[] enemyTypes;
     public List<GameObject> enemies;
+    public int EnemyScore;
     [SerializeField]
     private int spawnCount;
+
     public Transform GetRandomSpawnPoint => spawnPoints[Random.Range(0, spawnPoints.Length)];
     void Start()
     {
@@ -52,7 +54,12 @@ public class EnemyManager : Singleton<EnemyManager>
         print("Enemy Count: " + enemies.Count);
     }
 
-
+    public void RemoveEnemy(GameObject _Enemy)
+    {
+        EnemyScore = _Enemy.GetComponent<Enemy>().myScore;
+        Destroy(_Enemy);
+        enemies.Remove(_Enemy);
+    }
     
 
 }

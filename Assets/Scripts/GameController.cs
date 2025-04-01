@@ -1,9 +1,10 @@
-using TMPro.EditorUtilities;
+
 using UnityEngine;
 using UnityEngine.Android;
 
 public class GameController : Singleton<GameController>
 {
+    /*
    public int score;
    public int enemiesLeft;
    public float maxTime = 30;
@@ -16,7 +17,7 @@ public class GameController : Singleton<GameController>
     {
        
     }
-   /*
+   
     public void AddScore(int _points)
     {
         score += _points;
